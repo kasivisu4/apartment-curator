@@ -1,4 +1,4 @@
-# list-curator
+# List-Curator
 A data curation framework that could be used to instantiate applications with a combination of these components in a reactive environment:
 
 * Rich and dynamic faceted search [Filterer](https://observablehq.com/@kasivisu4/recursive_data_filter?collection=@kasivisu4/list_curator). Been able to go back and fort between exploration and filters.
