@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apartment Curator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div style="display: flex">
+      <div
+        id="observablehq-viewof-aptFilter-07a6a85d"
+        style="border: 2px solid #b1d0e6"
+      ></div>
+      <div style="width: 80%; padding: 20px">
+        <div
+          id="observablehq-viewof-sort-07a6a85d"
+          style="text-align: right; padding-right: 100px"
+          class="sort-div"
+        ></div>
+        <div id="observablehq-viewof-resData-07a6a85d"></div>
+        <div id="observablehq-viewof-dataAnnotated-07a6a85d"></div>
+      </div>
+    </div>
+
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/d/f42d862697d7d116@1632.js?v=3";
+      new Runtime().module(define, (name) => {
+        if (name === "viewof sort")
+          return new Inspector(
+            document.querySelector("#observablehq-viewof-sort-07a6a85d")
+          );
+        if (name === "viewof aptFilter")
+          return new Inspector(
+            document.querySelector("#observablehq-viewof-aptFilter-07a6a85d")
+          );
+        if (name === "viewof resData")
+          return new Inspector(
+            document.querySelector("#observablehq-viewof-resData-07a6a85d")
+          );
+        if (name === "viewof dataAnnotated")
+          return new Inspector(
+            document.querySelector(
+              "#observablehq-viewof-dataAnnotated-07a6a85d"
+            )
+          );
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      console.log(document.querySelector(".sort-div"));
+      document.querySelector(".sort-div").childNodes[0] = "sort";
+    </script>
+  </body>
+</html>
