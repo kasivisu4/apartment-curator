@@ -19,6 +19,7 @@
         style="border: 2px solid #b1d0e6"
       ></div>
       <div style="width: 80%; padding: 20px">
+        <button id="hard-refresh">Hard Refresh</button>
         <div
           id="observablehq-viewof-sort-07a6a85d"
           style="text-align: right; padding-right: 100px"
@@ -34,7 +35,7 @@
         Runtime,
         Inspector,
       } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-      import define from "https://api.observablehq.com/d/f42d862697d7d116@1632.js?v=3";
+      import define from "https://api.observablehq.com/d/f42d862697d7d116@1635.js?v=3";
       new Runtime().module(define, (name) => {
         if (name === "viewof sort")
           return new Inspector(
@@ -64,6 +65,12 @@
     <script>
       console.log(document.querySelector(".sort-div"));
       document.querySelector(".sort-div").childNodes[0] = "sort";
+    </script>
+    <script>
+      let btn = document.querySelector("#hard-refresh");
+      btn.addEventListener("click", () => {
+        window.location = window.location.origin;
+      });
     </script>
   </body>
 </html>
